@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by Alex on 19.06.16.
  */
-class CsvServise {
+public class CsvServise {
 
     public static <T> void writeCsvFile(T type, String path) throws IOException {
         File file = new File(path);
@@ -19,9 +19,12 @@ class CsvServise {
 
     public static List readCsvFile(String path) throws IOException {
         File file = new File(path);
-        List lines = FileUtils.readLines(file, "UTF-8");
+        List<String> lines = FileUtils.readLines(file, "UTF-8");
+
         return lines;
     }
+
+
 }
 
 

@@ -13,41 +13,62 @@ public class Main {
     static int counter;
 
     public static void main(String[] args) {
-        Constants.initProperties();
+        //  Constants.initProperties();
         Scanner in = new Scanner(System.in);
 
-        System.out.println("Enter movie data: name, author, genre");
-        String movieString = in.nextLine();
-        movieString.trim();
-        List<String> movieData = Arrays.asList(movieString.split("\\s*,\\s*"));
-        String name = movieData.get(0);
-        String author = movieData.get(1);
-        String genre = movieData.get(2);
-        Movie movie = new Movie();
-        counter++;
-        movie.setDirector(author);
-        movie.setGenre(genre);
-        movie.setName(name);
-        movie.setId(counter);
-        System.out.print("press 1 for saving movie to library, \n2 for delete movie from movie library, \n3 for exit");
+        for (; ; ) {
+            String c = in.nextLine();
+            System.out.println(String.format("Command: %s", c));
 
-        int s = in.nextInt();
-        switch (s) {
+            switch (c) {
 
-            case 1:
-                MovieUpdate updater = new MovieUpdate(movie);
-                try {
-                    updater.execute();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-            case 2:
+                case "add":
+                    System.out.println("Enter movie data: name, author, genre+\n");
 
 
-            case 3:
+                    String movieString = in.nextLine();
+                    movieString.trim();
+                    List<String> movieData = Arrays.asList(movieString.split("\\s*,\\s*"));
+                    String name = movieData.get(0);
+                    String author = movieData.get(1);
+                    String genre = movieData.get(2);
+                    Movie movie = new Movie();
+                    counter++;
+                    movie.setDirector(author);
+                    movie.setGenre(genre);
+                    movie.setName(name);
+                    movie.setId(counter);
+
+                    MovieUpdate updater = new MovieUpdate(movie);
+                    try {
+                        updater.execute();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                case "read":
+                    System.out.println("Enter film id");
+                    String id = in.nextLine();
+
+                    MovieRead reader = new MovieRead(Integer.parseInt(id));
+                    try {
+                        reader.execute();
+                    } catch (IOException e) {
+                       System.err.print("IOException: file not  found");
+                    }
+
+                case "read all":
+                    break;
+            }
+
+
+
+
+            if (c.toLowerCase().equals("exit")) {
                 break;
-        }
+            }
+                   }
+
         in.close();
     }
 
