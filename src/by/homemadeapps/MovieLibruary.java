@@ -4,17 +4,19 @@ package by.homemadeapps;
  * Created by Alex on 19.06.16.
  */
 
-import by.homemadeapps.Interface.MediaLibIn;
-import by.homemadeapps.Model.Movie;
-
+import by.homemadeapps.Interface.IMediaLib;
+import by.homemadeapps.Model.MediaItem;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class MediaLibruary implements MediaLibIn {
+public class MovieLibruary implements IMediaLib {
     private String pathToCatalog;
-    private List<Movie> moviesInLibraryList = new ArrayList<Movie>();
+    private List<MediaItem> mediaItems = new ArrayList<>();
     private String catalogName;
+
+
+
 
     public void setCatalogName(String catalogName) {
         this.catalogName = catalogName;
@@ -24,8 +26,8 @@ public abstract class MediaLibruary implements MediaLibIn {
         this.pathToCatalog = pathToCatalog;
     }
 
-    public void setMoviesInLibraryList(List<Movie> moviesInLibraryList) {
-        this.moviesInLibraryList = moviesInLibraryList;
+    public void setMediaItems(List<MediaItem> mediaItems) {
+        this.mediaItems = mediaItems;
     }
 
     @Override
@@ -39,8 +41,15 @@ public abstract class MediaLibruary implements MediaLibIn {
     }
 
     @Override
-    public List<Movie> getMoviesFromCatalog() {
-        return moviesInLibraryList;
+    public List<MediaItem> getItemsFromCatalog() {
+        return mediaItems;
     }
+
+    @Override
+    public void addItemToCatalog(MediaItem movie) {
+        mediaItems.add(movie);
+    }
+
+
 
 }

@@ -1,10 +1,13 @@
 <component name="libraryTable">
   <library name="java">
-    <CLASSES />
+    <CLASSES>
+      <root url="file://E:/MY/CSV" />
+    </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/Downloads/commons-io-2.5-src.zip!/commons-io-2.5-src/src/main/java" />
       <root url="jar://$USER_HOME$/Downloads/commons-io-2.5-src.zip!/commons-io-2.5-src/src/test/java" />
     </SOURCES>
+    <jarDirectory url="file://E:/MY/CSV" recursive="false" />
   </library>
 </component>

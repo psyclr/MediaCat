@@ -4,18 +4,17 @@ package by.homemadeapps.Model;
  * Created by Alex on 19.06.16.
  */
 
-public class Movie {
-
-
+public class Movie extends MediaItem{
     private int id;
-    private String genre;
-    private String author;
     private String name;
+    private String genre;
+    private String director;
+
 
     public Movie(){
         this.id=0;
         this.genre="";
-        this.author="";
+        this.director ="";
         this.name="";
     }
     public int getId() {
@@ -34,12 +33,12 @@ public class Movie {
         this.genre = genre;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getDirector() {
+        return director;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setDirector(String director) {
+        this.director = director;
     }
 
     public String getName() {
@@ -57,7 +56,7 @@ public class Movie {
         return "Movie{" +
                 "id=" + id +
                 ", genre='" + genre + '\'' +
-                ", author='" + author + '\'' +
+                ", director='" + director + '\'' +
                 ", name='" + name + '\'' +
                 '}';
     }
