@@ -5,6 +5,8 @@ package by.homemadeapps.Model;
  */
 
 public class Movie {
+
+
     private int id;
     private String genre;
     private String author;
@@ -44,8 +46,19 @@ public class Movie {
         return name;
     }
 
+
+
     public void setName(String name) {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "id=" + id +
+                ", genre='" + genre + '\'' +
+                ", author='" + author + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

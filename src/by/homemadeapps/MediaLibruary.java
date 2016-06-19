@@ -13,7 +13,7 @@ import java.util.List;
 
 public abstract class MediaLibruary implements MediaLibIn {
     private String pathToCatalog;
-    private List<Movie> booksInLibraryList = new ArrayList<Movie>();
+    private List<Movie> moviesInLibraryList = new ArrayList<Movie>();
     private String catalogName;
 
     public void setCatalogName(String catalogName) {
@@ -24,8 +24,8 @@ public abstract class MediaLibruary implements MediaLibIn {
         this.pathToCatalog = pathToCatalog;
     }
 
-    public void setBooksInLibraryList(List<Movie> booksInLibraryList) {
-        this.booksInLibraryList = booksInLibraryList;
+    public void setMoviesInLibraryList(List<Movie> moviesInLibraryList) {
+        this.moviesInLibraryList = moviesInLibraryList;
     }
 
     @Override
@@ -40,7 +40,7 @@ public abstract class MediaLibruary implements MediaLibIn {
 
     @Override
     public List<Movie> getMoviesFromCatalog() {
-        return booksInLibraryList;
+        return moviesInLibraryList;
     }
 
 }

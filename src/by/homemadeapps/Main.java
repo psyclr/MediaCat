@@ -4,6 +4,8 @@ import by.homemadeapps.Commands.UpdateMovieCommand;
 import by.homemadeapps.Model.Movie;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -20,13 +22,14 @@ public class Main {
         String name = movieData[0];
         String author = movieData[1];
         String genre = movieData[2];
+        List<String> items = Arrays.asList(str.split("\\s*,\\s*"));
         Movie movie = new Movie();
         counter++;
         movie.setAuthor(author);
         movie.setGenre(genre);
         movie.setName(name);
         movie.setId(counter);
-        System.out.print("press 1 for saving movie to libruary, 2 for delete movie from movie libruary, 3 for exit");
+        System.out.print("press 1 for saving movie to library, 2 for delete movie from movie library, 3 for exit");
         int s = in.nextInt();
         switch (s) {
 
