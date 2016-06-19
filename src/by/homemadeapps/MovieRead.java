@@ -5,6 +5,7 @@ import by.homemadeapps.Interface.Command;
 import by.homemadeapps.Model.Movie;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -13,6 +14,7 @@ import java.util.List;
 public class MovieRead implements Command {
 
     private int id;
+    Movie movie;
 
     MovieRead(int id) {
         this.id = id;
@@ -23,12 +25,14 @@ public class MovieRead implements Command {
     public void execute() throws IOException {
         List data = CsvServise.readCsvFile(Constants.PATH_MOVIES);
         for (int i = 0; i < data.size(); i++) {
-            Movie movie = (Movie) data.get(i);
-            if (movie.getId() == id){
-                System.out.println(movie.toString());
-            }else{
-                System.out.println("there's no such item in the library");
+            String s = (String) data.get(i);
+            List<String> movieData = Arrays.asList(s.split("\\s*,\\s*"));
 
+            if (Integer.parseInt(movieData.get(0)) == id) {
+
+                break;
+            } else {
+                System.out.println("there's no such item in the library");
             }
         }
 

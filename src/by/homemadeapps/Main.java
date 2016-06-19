@@ -24,8 +24,6 @@ public class Main {
 
                 case "add":
                     System.out.println("Enter movie data: name, author, genre+\n");
-
-
                     String movieString = in.nextLine();
                     movieString.trim();
                     List<String> movieData = Arrays.asList(movieString.split("\\s*,\\s*"));
@@ -45,7 +43,7 @@ public class Main {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-
+                    break;
                 case "read":
                     System.out.println("Enter film id");
                     String id = in.nextLine();
@@ -54,20 +52,18 @@ public class Main {
                     try {
                         reader.execute();
                     } catch (IOException e) {
-                       System.err.print("IOException: file not  found");
+                        System.err.print("IOException: file not  found");
                     }
-
+                    break;
                 case "read all":
                     break;
             }
 
 
-
-
             if (c.toLowerCase().equals("exit")) {
                 break;
             }
-                   }
+        }
 
         in.close();
     }
