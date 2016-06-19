@@ -18,11 +18,11 @@ public class Main {
         System.out.println("Enter movie data: name, author, genre");
         String movieString = in.nextLine();
         movieString.trim();
-        String[] movieData = movieString.split(", ");
-        String name = movieData[0];
-        String author = movieData[1];
-        String genre = movieData[2];
-        List<String> items = Arrays.asList(str.split("\\s*,\\s*"));
+        List<String> movieData = Arrays.asList(movieString.split("\\s*,\\s*"));
+        String name = movieData.get(0);
+        String author = movieData.get(1);
+        String genre = movieData.get(2);
+
         Movie movie = new Movie();
         counter++;
         movie.setAuthor(author);
