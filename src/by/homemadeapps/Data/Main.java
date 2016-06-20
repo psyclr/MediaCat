@@ -1,4 +1,4 @@
-package by.homemadeapps;
+package by.homemadeapps.Data;
 
 import by.homemadeapps.Commands.MovieUpdate;
 import by.homemadeapps.Model.Movie;

@@ -1,4 +1,4 @@
-package by.homemadeapps;
+package by.homemadeapps.Data;
 
 /**
  * Created by Alex on 19.06.16.

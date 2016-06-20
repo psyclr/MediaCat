@@ -4,7 +4,7 @@ package by.homemadeapps.Commands;
  * Created by Alex on 19.06.16.
  */
 
-import by.homemadeapps.Constants;
+import by.homemadeapps.Data.Constants;
 import by.homemadeapps.Interface.Command;
 import by.homemadeapps.Model.Movie;
 
