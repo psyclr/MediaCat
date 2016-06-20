@@ -53,11 +53,6 @@ public class Movie extends MediaItem{
 
     @Override
     public String toString() {
-        return "Movie{" +
-                "id=" + id +
-                ", genre='" + genre + '\'' +
-                ", director='" + director + '\'' +
-                ", name='" + name + '\'' +
-                '}';
+        return id+","+name+","+genre+","+director;
     }
 }

@@ -18,13 +18,9 @@ public class MovieUpdate implements Command {
         this.movie = movie;
     }
 
-    public MovieUpdate() {
-
-    }
-
-    @Override
+     @Override
     public void execute() throws IOException {
-        CsvServise.writeCsvFile(movie, Constants.PATH_MOVIES);
+         CsvServise.writeCsvFile(movie, Constants.PATH_MOVIES);
     }
 
 

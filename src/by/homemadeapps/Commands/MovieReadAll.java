@@ -1,6 +1,10 @@
-package by.homemadeapps;
+package by.homemadeapps.Commands;
 
-import by.homemadeapps.Commands.CsvServise;
+/**
+ * Created by Alex on 20.06.16.
+ */
+
+import by.homemadeapps.Constants;
 import by.homemadeapps.Interface.Command;
 import by.homemadeapps.Model.Movie;
 
@@ -11,21 +15,10 @@ import java.util.List;
 /**
  * Created by Alex on 19.06.16.
  */
-public class MovieRead implements Command {
-
-    private int id;
+public class MovieReadAll implements Command {
 
     List<String> movieData;
     String s;
-
-    MovieRead(int id) {
-        this.id = id;
-    }
-
-    public MovieRead() {
-
-    }
-
 
     @Override
     public void execute() throws IOException {
@@ -39,12 +32,10 @@ public class MovieRead implements Command {
                 movie.setName(movieData.get(1));
                 movie.setGenre(movieData.get(2));
                 movie.setDirector(movieData.get(3));
+                System.out.println("Your movie data: " + movie.toString() + "\n");
 
-                if (Integer.parseInt(movieData.get(0)) == id) {
-                    System.out.println("Your movie data: " + movie.toString());
-                    break;
-                }
             }
         }
     }
 }
+
