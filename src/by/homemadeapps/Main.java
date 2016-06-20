@@ -22,6 +22,8 @@ public class Main {
             switch (c.toLowerCase()) {
                 case "add library":
                     MovieLibruary movieLibruary = new MovieLibruary();
+                    System.out.print("Library added");
+                    System.out.print("Press enter for next command");
                 case "add":
                     System.out.println("Enter movie data:\n name, author, genre, id\nseparate words with comma");
                     String movieString = in.nextLine();
@@ -42,6 +44,7 @@ public class Main {
                     try {
                         updater.execute();
                         System.out.println("Your item was successfully added ");
+                        System.out.print("Press enter for next command");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -52,6 +55,7 @@ public class Main {
                     movieLibruary = new MovieLibruary(Integer.parseInt(idStr));
                     try {
                         movieLibruary.getItemFromCatalog();
+                        System.out.print("Press enter for next command");
                     } catch (IOException e) {
 
                         System.err.print("IOException: file not  found");
@@ -64,7 +68,7 @@ public class Main {
                     movieLibruary = new MovieLibruary();
                     try {
                         movieLibruary.getAllData();
-
+                        System.out.print("Press enter for next command");
                     } catch (IOException e) {
 
                         System.err.print("IOException: file not  found");
@@ -73,7 +77,8 @@ public class Main {
 
                     break;
                 case "help":
-                    System.out.println("Commands: help\nadd\nread\nread all\ndelete\nexit\nEnter command\n");
+                    System.out.println("Commands: help\nadd\nread\nread all\ndelete\nexit\n");
+                    System.out.print("Press enter for next command");
                     break;
             }
             if (c.toLowerCase().equals("exit")) {
